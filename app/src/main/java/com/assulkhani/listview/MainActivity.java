@@ -1,5 +1,6 @@
 package com.assulkhani.listview;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -56,6 +57,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MediaPlayer.create(MainActivity.this, suaraImages[position]).start();
+
+                Intent move = new Intent(MainActivity.this, DetailActivity.class);
+                move.putExtra("DATANAMA", namaImages[position]);
+                move.putExtra("DATAGAMBAR", images[position]);
+                // putExtra digunakan untuk menaruhkan data dari Intent
+                startActivity(move);
             }
         });
     }
