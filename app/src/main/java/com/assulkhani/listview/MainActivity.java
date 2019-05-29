@@ -59,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
                 MediaPlayer.create(MainActivity.this, suaraImages[position]).start();
 
                 Intent move = new Intent(MainActivity.this, DetailActivity.class);
-                move.putExtra("DATANAMA", namaImages[position]);
-                move.putExtra("DATAGAMBAR", images[position]);
+                move.putExtra(Konstanta.DATANAMA, namaImages[position]);
+                move.putExtra(Konstanta.DATAGAMBAR, images[position]);
                 // putExtra digunakan untuk menaruhkan data dari Intent
                 startActivity(move);
             }
